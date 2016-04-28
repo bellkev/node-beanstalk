@@ -1,0 +1,10 @@
+{
+  "name": "Elastic-Beanstalk-Sample-App",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "npm start & sleep 5; curl localhost:3000 | grep Congratulations"
+  }
+}
