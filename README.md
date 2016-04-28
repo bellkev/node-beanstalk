@@ -13,8 +13,8 @@ This is a simple example of deploying a nodejs application from CircleCI to AWS 
 - Skip/proceed through the rest of the setup
 
 **Setup CircleCI project settings:**
-- Configure AWS credentials at https://circleci.com/gh/<org name>/<project name>/edit#aws (must be able to access the s3 bucket and the beanstalk app)
-- Add the following environment variables at https://circleci.com/gh/<org name>/<project name>/edit#env-vars :
+- Configure AWS credentials at `https://circleci.com/gh/{org name}/{project name}/edit#aws` (must be able to access the s3 bucket and the beanstalk app)
+- Add the following environment variables at `https://circleci.com/gh/{org name}/{project name}/edit#env-vars`:
   - EB_BUCKET: The s3 bucket you set up earlier
   - EB_APP: The name of the beanstalk app
   - EB_ENV: The name of the beanstalk environment to deploy to
