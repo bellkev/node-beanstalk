@@ -1,0 +1,8 @@
+deployment:
+  elasticbeanstalk:
+    branch: master
+    commands:
+      - zip -r app-$CIRCLE_SHA1 .
+      - aws s3 cp app-$CIRCLE_SHA1.zip s3://$EB_BUCKET/app-$CIRCLE_SHA1.zip
+      - aws elasticbeanstalk create-application-version --application-name $EB_APP --version-label $CIRCLE_SHA1 --source-bundle S3Bucket=$EB_BUCKET,S3Key=app-$CIRCLE_SHA1.zip
+      - aws elasticbeanstalk update-environment --environment-name $EB_ENV --version-label $CIRCLE_SHA1
